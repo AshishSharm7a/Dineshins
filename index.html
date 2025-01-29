@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Instagram</title>
+</head>
+<body>
+    <div class="container">
+        <img src="1_Instagram_colored_svg_1-1024.webp" alt="Instagram Logo" class="logo">
+        <form>
+            <input type="text" placeholder="Phone number, username, or email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="login-button">Log in</button>
+
+            <div class="or">OR</div>
+            <button type="button" class="facebook-login">Log in with Facebook</button>
+            <div id="error-message"></div>
+        </form>
+    <script>
+        document.getElementById('login-button').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const username = document.querySelector('input[type="text"]').value;
+            const password = document.getElementById('password').value;
+
+            // Simulate user validation (this should be replaced with actual validation logic)
+            const users = [
+                { "User ID": "dinesh_00770", "Password": "You got hacked" },
+                // Add more users as needed
+            ];
+
+            const user = users.find(user => user["User ID"] === username && user.Password === password);
+            if (user) {
+                window.location.href = 'dharmender.html'; // Redirect to dharmender.html
+            } else {
+                document.getElementById('error-message').innerText = 'Invalid username or password';
+            }
+        });
+    </script>
+
+        <div class="links">
+            <a href="forgot-password.html">Forgot password?</a>
+            <a href="signup.html">Don't have an account? Sign up</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
